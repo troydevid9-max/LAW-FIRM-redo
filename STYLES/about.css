@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url("../IMAGES/images\ \(33\).jpeg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* blur background */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    filter: blur(4px);
+    transform: scale(1.1);
+    z-index: 0;
+}
+
+/* dark overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.subtitle {
+    font-size: 23.6px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.hero h1 {
+    font-size: 82.165px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    background: #c7a36a;
+    color: black;
+    border: none;
+    padding: 16px 48px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #b89257;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 38px;
+    }
+}
