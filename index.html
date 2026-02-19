@@ -63,283 +63,301 @@
 
 
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-  }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
 
-  /* Practice Section Flex Layout */
-  .practice-section {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 50px auto;
-    gap: 40px;
-    padding: 0 20px;
-  }
+        /* Practice Section Flex Layout */
+        .practice-section {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 50px auto;
+            gap: 40px;
+            padding: 0 20px;
+        }
 
-  /* Left Text Column */
-  .practice-header {
-    flex: 1 1 350px;
-    max-width: 400px;
-  }
+        /* Left Text Column */
+        .practice-header {
+            flex: 1 1 350px;
+            max-width: 400px;
+        }
 
-  .practice-header p:first-child {
-    font-size: 12px;
-    color: #888;
-    margin: 0;
-  }
+        .practice-header p:first-child {
+            font-size: 12px;
+            color: #888;
+            margin: 0;
+        }
 
-  .practice-header h2 {
-    font-size: 28px;
-    margin: 5px 0 15px;
-  }
+        .practice-header h2 {
+            font-size: 28px;
+            margin: 5px 0 15px;
+        }
 
-  .practice-header p:last-child {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.6;
-  }
+        .practice-header p:last-child {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
 
-  .detailed-practice-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #d9b887;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-  }
+        .detailed-practice-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d9b887;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
-  /* Right Slider Column */
-  .slider-container {
-    flex: 2 1 600px;
-    position: relative;
-    overflow: hidden;
-    background-color: #d9b887;
-    border-radius: 8px;
-    padding: 20px 0;
-  }
+        /* Right Slider Column */
+        .slider-container {
+            flex: 2 1 600px;
+            position: relative;
+            overflow: hidden;
+            background-color: #d9b887;
+            border-radius: 8px;
+            padding: 20px 0;
+        }
 
-  .slider-wrapper {
-    display: flex;
-    transition: transform 0.5s linear;
-  }
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
 
-  .card {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 30px 20px;
-    margin-right: 15px;
-    width: 220px;
-    height: 270px;
-    flex-shrink: 0;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px 20px;
+            margin-right: 15px;
+            width: 220px;
+            height: 270px;
+            flex-shrink: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
 
-  .card-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 15px;
-    display: inline-block;
-    background-color: #555;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 24px;
-    line-height: 50px;
-  }
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+            display: inline-block;
+            background-color: #555;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 24px;
+            line-height: 50px;
+        }
 
-  .card h3 {
-    margin: 5px 0 10px;
-    font-size: 16px;
-    font-weight: 600;
-  }
+        .card h3 {
+            margin: 5px 0 10px;
+            font-size: 16px;
+            font-weight: 600;
+        }
 
-  .card p {
-    font-size: 13px;
-    color: #555;
-    line-height: 1.4;
-  }
+        .card p {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.4;
+        }
 
-  /* Slider Buttons */
-  .slider-buttons {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10px;
-    pointer-events: none;
-  }
+        /* Slider Buttons */
+        .slider-buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+            pointer-events: none;
+        }
 
-  .slider-buttons button {
-    background-color: #555;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-    pointer-events: all;
-  }
+        .slider-buttons button {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            pointer-events: all;
+        }
 
-  /* Responsive Adjustments */
-  @media (max-width: 900px) {
-    .practice-section {
-      flex-direction: column;
-      align-items: center;
-    }
-    .slider-container {
-      width: 100%;
-    }
-  }
+        /* Responsive Adjustments */
+        @media (max-width: 900px) {
+            .practice-section {
+                flex-direction: column;
+                align-items: center;
+            }
 
-  @media (max-width: 600px) {
-    .slider-wrapper {
-      flex-direction: column;
-    }
-    .card {
-      width: 100%;
-      margin-right: 0;
-      margin-bottom: 15px;
-    }
-  }
-</style>
-</head>
-<body>
+            .slider-container {
+                width: 100%;
+            }
+        }
 
-<div class="practice-section">
-  <!-- Left Column -->
-  <div class="practice-header">
-    <p>OUR PRACTICE</p>
-    <h2>Our Practice Areas</h2>
-    <p>Diverse Legal Expertise to Meet Your Needs. Our commitment to excellence in legal service became evident as we handled a diverse range of cases, from corporate law to family disputes. We steadily gained the trust of our clients, earning a reputation for professionalism and integrity.</p>
-    <button class="detailed-practice-btn">Detailed Practice</button>
-  </div>
+        /* Mobile: show only 1 card at a time */
+        @media (max-width: 600px) {
+            .slider-wrapper {
+                flex-direction: row;
+                /* still flex so slide works */
+            }
 
-  <!-- Right Column Slider -->
-  <div class="slider-container">
-    <div class="slider-wrapper" id="sliderWrapper">
-      <div class="card">
-        <div class="card-icon">🏛️</div>
-        <h3>Corporate Law</h3>
-        <p>Navigating the complexities of corporate governance, mergers, acquisitions, and compliance with precision and strategic insight.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">👨‍👩‍👧‍👦</div>
-        <h3>Family Law</h3>
-        <p>Compassionate advocacy for matters of family, including divorce, child custody, spousal support, and property division.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">💰</div>
-        <h3>Banking & Finance</h3>
-        <p>Assisting financial institutions, businesses, and individuals with banking and finance matters.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">⚖️</div>
-        <h3>Criminal Law</h3>
-        <p>Defending clients with integrity, handling criminal cases with strategic insight and dedication.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📜</div>
-        <h3>Real Estate Law</h3>
-        <p>Advising on property transactions, leases, disputes, and regulatory compliance in real estate.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🏢</div>
-        <h3>Intellectual Property</h3>
-        <p>Protecting intellectual property rights through registration, enforcement, and licensing solutions.</p>
-      </div>
-    </div>
+            .card {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    </style>
+    </head>
 
-    <!-- Slider Buttons -->
-    <div class="slider-buttons">
-      <button id="prevBtn">‹</button>
-      <button id="nextBtn">›</button>
-    </div>
-  </div>
-</div>
+    <body>
 
-<script>
-const sliderWrapper = document.getElementById('sliderWrapper');
-let cards = Array.from(sliderWrapper.children);
+        <div class="practice-section">
+            <!-- Left Column -->
+            <div class="practice-header">
+                <p>OUR PRACTICE</p>
+                <h2>Our Practice Areas</h2>
+                <p>Diverse Legal Expertise to Meet Your Needs. Our commitment to excellence in legal service became
+                    evident as we handled a diverse range of cases, from corporate law to family disputes. We steadily
+                    gained the trust of our clients, earning a reputation for professionalism and integrity.</p>
+                <button class="detailed-practice-btn">Detailed Practice</button>
+            </div>
 
-// Clone cards for infinite scroll
-cards.forEach(card => sliderWrapper.appendChild(card.cloneNode(true)));
+            <!-- Right Column Slider -->
+            <div class="slider-container">
+                <div class="slider-wrapper" id="sliderWrapper">
+                    <div class="card">
+                        <div class="card-icon">🏛️</div>
+                        <h3>Corporate Law</h3>
+                        <p>Navigating the complexities of corporate governance, mergers, acquisitions, and compliance
+                            with precision and strategic insight.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">👨‍👩‍👧‍👦</div>
+                        <h3>Family Law</h3>
+                        <p>Compassionate advocacy for matters of family, including divorce, child custody, spousal
+                            support, and property division.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">💰</div>
+                        <h3>Banking & Finance</h3>
+                        <p>Assisting financial institutions, businesses, and individuals with banking and finance
+                            matters.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">⚖️</div>
+                        <h3>Criminal Law</h3>
+                        <p>Defending clients with integrity, handling criminal cases with strategic insight and
+                            dedication.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📜</div>
+                        <h3>Real Estate Law</h3>
+                        <p>Advising on property transactions, leases, disputes, and regulatory compliance in real
+                            estate.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🏢</div>
+                        <h3>Intellectual Property</h3>
+                        <p>Protecting intellectual property rights through registration, enforcement, and licensing
+                            solutions.</p>
+                    </div>
+                </div>
 
-let index = 0;
-let cardWidth = cards[0].offsetWidth + 15;
-let isMobile = window.innerWidth <= 600;
+                <!-- Slider Buttons -->
+                <div class="slider-buttons">
+                    <button id="prevBtn">‹</button>
+                    <button id="nextBtn">›</button>
+                </div>
+            </div>
+        </div>
 
-// Update width on resize
-window.addEventListener('resize', () => {
-  cardWidth = cards[0].offsetWidth + 15;
-  isMobile = window.innerWidth <= 600;
-});
+        <script>
+            const sliderWrapper = document.getElementById('sliderWrapper');
+            let cards = Array.from(sliderWrapper.children);
 
-// Slide function
-function slide() {
-  sliderWrapper.style.transition = 'transform 0.5s linear';
-  sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
-}
+            // Clone cards for infinite scroll
+            cards.forEach(card => sliderWrapper.appendChild(card.cloneNode(true)));
 
-// Manual button controls
-document.getElementById('nextBtn').addEventListener('click', () => {
-  index++;
-  slide();
-  if(index >= cards.length) {
-    setTimeout(() => {
-      sliderWrapper.style.transition = 'none';
-      index = 0;
-      sliderWrapper.style.transform = `translateX(0px)`;
-    }, 500);
-  }
-});
+            let index = 0;
+            let cardWidth = cards[0].offsetWidth;
+            let autoScroll;
 
-document.getElementById('prevBtn').addEventListener('click', () => {
-  if(index === 0){
-    sliderWrapper.style.transition = 'none';
-    index = cards.length - 1;
-    sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
-    setTimeout(() => {
-      sliderWrapper.style.transition = 'transform 0.5s linear';
-      index--;
-      slide();
-    }, 20);
-  } else {
-    index--;
-    slide();
-  }
-});
+            // Detect if mobile
+            function isMobile() {
+                return window.innerWidth <= 600;
+            }
 
-// Auto-scroll after 1.2 seconds on mobile
-setTimeout(() => {
-  if(isMobile){
-    setInterval(() => {
-      index++;
-      slide();
-      if(index >= cards.length){
-        setTimeout(() => {
-          sliderWrapper.style.transition = 'none';
-          index = 0;
-          sliderWrapper.style.transform = `translateX(0px)`;
-        }, 500);
-      }
-    }, 3000); // auto scroll interval
-  }
-}, 1200);
+            // Update cardWidth on resize
+            window.addEventListener('resize', () => {
+                cardWidth = cards[0].offsetWidth;
+            });
 
-</script>
+            // Slide function
+            function slide() {
+                sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
+                sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
+            }
+
+            // Manual button controls
+            document.getElementById('nextBtn').addEventListener('click', () => {
+                clearInterval(autoScroll);
+                index++;
+                slide();
+                if (index >= cards.length) {
+                    setTimeout(() => {
+                        sliderWrapper.style.transition = 'none';
+                        index = 0;
+                        sliderWrapper.style.transform = `translateX(0px)`;
+                    }, 500);
+                }
+            });
+
+            document.getElementById('prevBtn').addEventListener('click', () => {
+                clearInterval(autoScroll);
+                if (index === 0) {
+                    sliderWrapper.style.transition = 'none';
+                    index = cards.length - 1;
+                    sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
+                    setTimeout(() => {
+                        sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
+                        index--;
+                        slide();
+                    }, 20);
+                } else {
+                    index--;
+                    slide();
+                }
+            });
+
+            // Auto-scroll on mobile after 1.2 seconds
+            setTimeout(() => {
+                if (isMobile()) {
+                    autoScroll = setInterval(() => {
+                        index++;
+                        slide();
+                        if (index >= cards.length) {
+                            setTimeout(() => {
+                                sliderWrapper.style.transition = 'none';
+                                index = 0;
+                                sliderWrapper.style.transform = `translateX(0px)`;
+                            }, 500);
+                        }
+                    }, 3000); // slide every 3 seconds
+                }
+            }, 1200);
+
+        </script>
 
 
 
-    <script src="./SCRIPT/header.js"></script>
-    <script src="./SCRIPT/include.js"></script>
-</body>
+        <script src="./SCRIPT/header.js"></script>
+        <script src="./SCRIPT/include.js"></script>
+    </body>
