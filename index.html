@@ -66,16 +66,14 @@
 
     <style>
         .ptc {
-            height: 96vh;
+
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
+           
         }
 
+        /* Practice Section Flex Layout */
         .practice-section {
             display: flex;
             flex-wrap: wrap;
@@ -118,7 +116,7 @@
             font-weight: bold;
         }
 
-        /* Slider Column */
+        /* Right Slider Column */
         .slider-container {
             flex: 2 1 600px;
             position: relative;
@@ -171,6 +169,7 @@
             line-height: 1.4;
         }
 
+        /* Slider Buttons */
         .slider-buttons {
             position: absolute;
             top: 50%;
@@ -179,6 +178,7 @@
             display: flex;
             justify-content: space-between;
             padding: 0 10px;
+            pointer-events: none;
         }
 
         .slider-buttons button {
@@ -189,8 +189,10 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 18px;
+            pointer-events: all;
         }
 
+        /* Responsive Adjustments */
         @media (max-width: 900px) {
             .practice-section {
                 flex-direction: column;
@@ -199,6 +201,14 @@
 
             .slider-container {
                 width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                width: 90%;
+                margin-right: 10px;
+                height: auto;
             }
         }
     </style>
@@ -210,10 +220,8 @@
                 <p>OUR PRACTICE</p>
                 <h2>Our Practice Areas</h2>
                 <p>Diverse Legal Expertise to Meet Your Needs. Our commitment to excellence in legal service became
-                    evident
-                    as we handled a diverse range of cases, from corporate law to family disputes. We steadily gained
-                    the
-                    trust of our clients, earning a reputation for professionalism and integrity.</p>
+                    evident as we handled a diverse range of cases, from corporate law to family disputes. We steadily
+                    gained the trust of our clients, earning a reputation for professionalism and integrity.</p>
                 <button class="detailed-practice-btn">Detailed Practice</button>
             </div>
 
@@ -224,36 +232,31 @@
                         <div class="card-icon">🏛️</div>
                         <h3>Corporate Law</h3>
                         <p>Navigating the complexities of corporate governance, mergers, acquisitions, and compliance
-                            with
-                            precision and strategic insight.</p>
+                            with precision and strategic insight.</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">👨‍👩‍👧‍👦</div>
                         <h3>Family Law</h3>
                         <p>Compassionate advocacy for matters of family, including divorce, child custody, spousal
-                            support,
-                            and property division.</p>
+                            support, and property division.</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">💰</div>
                         <h3>Banking & Finance</h3>
                         <p>Assisting financial institutions, businesses, and individuals with banking and finance
-                            matters.
-                        </p>
+                            matters.</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">⚖️</div>
                         <h3>Criminal Law</h3>
                         <p>Defending clients with integrity, handling criminal cases with strategic insight and
-                            dedication.
-                        </p>
+                            dedication.</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">📜</div>
                         <h3>Real Estate Law</h3>
                         <p>Advising on property transactions, leases, disputes, and regulatory compliance in real
-                            estate.
-                        </p>
+                            estate.</p>
                     </div>
                     <div class="card">
                         <div class="card-icon">🏢</div>
@@ -270,76 +273,75 @@
                 </div>
             </div>
         </div>
-    </section>
 
-    <script>
-        const sliderWrapper = document.getElementById('sliderWrapper');
-        let cards = Array.from(sliderWrapper.children);
+        <script>
+            const sliderWrapper = document.getElementById('sliderWrapper');
+            let cards = Array.from(sliderWrapper.children);
 
-        // Clone cards to make infinite loop effect
-        cards.forEach(card => {
-            const clone = card.cloneNode(true);
-            sliderWrapper.appendChild(clone);
-        });
+            // Clone cards for infinite scrolling
+            cards.forEach(card => sliderWrapper.appendChild(card.cloneNode(true)));
 
-        let index = 0;
-        let cardWidth = cards[0].offsetWidth + 15;
+            let index = 0;
+            let cardWidth = cards[0].offsetWidth + 15;
 
-        // Update card width on resize
-        window.addEventListener('resize', () => {
-            cardWidth = cards[0].offsetWidth + 15;
-        });
+            // Update width on resize
+            window.addEventListener('resize', () => {
+                cardWidth = cards[0].offsetWidth + 15;
+            });
 
-        // Slide function
-        function slide() {
-            sliderWrapper.style.transition = 'transform 0.5s linear';
-            sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
-        }
-
-        // Infinite auto scroll
-        let autoScroll = setInterval(() => {
-            index++;
-            slide();
-            if (index >= cards.length) {
-                setTimeout(() => {
-                    sliderWrapper.style.transition = 'none';
-                    index = 0;
-                    sliderWrapper.style.transform = `translateX(0px)`;
-                }, 500);
-            }
-        }, 3000); // slides every 3 seconds
-
-        // Button controls
-        document.getElementById('nextBtn').addEventListener('click', () => {
-            clearInterval(autoScroll);
-            index++;
-            slide();
-            if (index >= cards.length) {
-                setTimeout(() => {
-                    sliderWrapper.style.transition = 'none';
-                    index = 0;
-                    sliderWrapper.style.transform = `translateX(0px)`;
-                }, 500);
-            }
-        });
-
-        document.getElementById('prevBtn').addEventListener('click', () => {
-            clearInterval(autoScroll);
-            if (index === 0) {
-                sliderWrapper.style.transition = 'none';
-                index = cards.length - 1;
+            // Slide function
+            function slide() {
+                sliderWrapper.style.transition = 'transform 0.5s linear';
                 sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
-                setTimeout(() => {
-                    sliderWrapper.style.transition = 'transform 1.3s linear';
+            }
+
+            // Infinite auto scroll
+            let autoScroll = setInterval(() => {
+                index++;
+                slide();
+                if (index >= cards.length) {
+                    setTimeout(() => {
+                        sliderWrapper.style.transition = 'none';
+                        index = 0;
+                        sliderWrapper.style.transform = `translateX(0px)`;
+                    }, 500);
+                }
+            }, 3000);
+
+            // Button Controls
+            document.getElementById('nextBtn').addEventListener('click', () => {
+                clearInterval(autoScroll);
+                index++;
+                slide();
+                if (index >= cards.length) {
+                    setTimeout(() => {
+                        sliderWrapper.style.transition = 'none';
+                        index = 0;
+                        sliderWrapper.style.transform = `translateX(0px)`;
+                    }, 500);
+                }
+            });
+
+            document.getElementById('prevBtn').addEventListener('click', () => {
+                clearInterval(autoScroll);
+                if (index === 0) {
+                    sliderWrapper.style.transition = 'none';
+                    index = cards.length - 1;
+                    sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
+                    setTimeout(() => {
+                        sliderWrapper.style.transition = 'transform 0.5s linear';
+                        index--;
+                        slide();
+                    }, 20);
+                } else {
                     index--;
                     slide();
-                }, 20);
-            } else {
-                index--;
-                slide();
-            }
-        });
-    </script>
+                }
+            });
+        </script>
+    </section>
+
+
 
 
 
