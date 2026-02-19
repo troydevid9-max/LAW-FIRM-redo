@@ -1,6 +1,8 @@
 const pageType = document.body.dataset.layout
 const pageLocation = window.location.pathname
 
+
+
 console.log(pageLocation)
 
 console.log(pageType)
@@ -26,16 +28,22 @@ const load = async (id, file) => {
 
 //IF STATEMENTS TO SET THE CIRRECT HEADER AND FOOTER
 
+async function head() {
 
-if (pageType === "public") {
-    if (pageLocation === "/FRONTEND/index.html" || pageLocation === "/" || pageLocation === "/index.html") {
-        load("header", "./COMPONENTS/header.html")
-        load("footer", "./COMPONENTS/footer.html")
-    }
+    if (pageType === "public") {
+        if (pageLocation === "/FRONTEND/index.html" || pageLocation === "/" || pageLocation === "/index.html") {
+            await load("header", "./COMPONENTS/header.html")
 
-    else {
-        load("header", "../COMPONENTS/header.html")
-        load("footer", "../COMPONENTS/footer.html")
+            headerAll()
+            await load("footer", "./COMPONENTS/footer.html")
+        }
+
+        else {
+            await load("header", "../COMPONENTS/header.html")
+            await load("footer", "../COMPONENTS/footer.html")
+        }
+
     }
 
 }
+head()
