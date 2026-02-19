@@ -6,14 +6,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./STYLES/about.css">
+    <link rel="stylesheet" href="./STYLES/styles.css">
     <link rel="stylesheet" href="./STYLES/header.css">
 
 </head>
 
 <body data-layout="public">
     <div id="header"></div>
-    
-   
+
+
 
     <section class="hero">
 
@@ -31,6 +32,316 @@
         </div>
 
     </section>
+
+    <section class="experience-section">
+        <div class="section-content">
+
+            <!-- Image with badge -->
+            <div class="image-content">
+                <img src="./IMAGES/img1.png" alt="Law Firm">
+                <div class="experience-badge">22 Years Experience</div>
+            </div>
+
+            <!-- Text content -->
+            <div class="text-content">
+                <h4 class="subheader">Learn About Us</h4>
+                <h2>Trusted Legal Expertise</h2>
+                <p>
+                    Over the course of 22 years, Hardy Buchanan & Rooney LLP has evolved, adapted, and grown,
+                    but our core values of integrity, excellence, and commitment to justice remain unwavering.
+                    We are proud of our contributions to the Canadian legal landscape, and we look forward to
+                    the future with the same dedication and enthusiasm that have defined our journey thus far.
+                    As we continue to serve our clients and the community, we remain committed to upholding the
+                    highest standards of legal practice and making a positive impact on the lives of those we serve.
+                </p>
+                <button class="section-btn">Get A Quote</button>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+    <style>
+        .ptc {
+            height: 96vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .practice-section {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 50px auto;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        /* Left Text Column */
+        .practice-header {
+            flex: 1 1 350px;
+            max-width: 400px;
+        }
+
+        .practice-header p:first-child {
+            font-size: 12px;
+            color: #888;
+            margin: 0;
+        }
+
+        .practice-header h2 {
+            font-size: 28px;
+            margin: 5px 0 15px;
+        }
+
+        .practice-header p:last-child {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .detailed-practice-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #d9b887;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Slider Column */
+        .slider-container {
+            flex: 2 1 600px;
+            position: relative;
+            overflow: hidden;
+            background-color: #d9b887;
+            border-radius: 8px;
+            padding: 20px 0;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s linear;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px 20px;
+            margin-right: 15px;
+            width: 220px;
+            height: 270px;
+            flex-shrink: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+            display: inline-block;
+            background-color: #555;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 24px;
+            line-height: 50px;
+        }
+
+        .card h3 {
+            margin: 5px 0 10px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        .slider-buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+
+        .slider-buttons button {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        @media (max-width: 900px) {
+            .practice-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .slider-container {
+                width: 100%;
+            }
+        }
+    </style>
+
+    <section class="ptc">
+        <div class="practice-section">
+            <!-- Left Column -->
+            <div class="practice-header">
+                <p>OUR PRACTICE</p>
+                <h2>Our Practice Areas</h2>
+                <p>Diverse Legal Expertise to Meet Your Needs. Our commitment to excellence in legal service became
+                    evident
+                    as we handled a diverse range of cases, from corporate law to family disputes. We steadily gained
+                    the
+                    trust of our clients, earning a reputation for professionalism and integrity.</p>
+                <button class="detailed-practice-btn">Detailed Practice</button>
+            </div>
+
+            <!-- Right Column Slider -->
+            <div class="slider-container">
+                <div class="slider-wrapper" id="sliderWrapper">
+                    <div class="card">
+                        <div class="card-icon">🏛️</div>
+                        <h3>Corporate Law</h3>
+                        <p>Navigating the complexities of corporate governance, mergers, acquisitions, and compliance
+                            with
+                            precision and strategic insight.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">👨‍👩‍👧‍👦</div>
+                        <h3>Family Law</h3>
+                        <p>Compassionate advocacy for matters of family, including divorce, child custody, spousal
+                            support,
+                            and property division.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">💰</div>
+                        <h3>Banking & Finance</h3>
+                        <p>Assisting financial institutions, businesses, and individuals with banking and finance
+                            matters.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">⚖️</div>
+                        <h3>Criminal Law</h3>
+                        <p>Defending clients with integrity, handling criminal cases with strategic insight and
+                            dedication.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📜</div>
+                        <h3>Real Estate Law</h3>
+                        <p>Advising on property transactions, leases, disputes, and regulatory compliance in real
+                            estate.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🏢</div>
+                        <h3>Intellectual Property</h3>
+                        <p>Protecting intellectual property rights through registration, enforcement, and licensing
+                            solutions.</p>
+                    </div>
+                </div>
+
+                <!-- Slider Buttons -->
+                <div class="slider-buttons">
+                    <button id="prevBtn">‹</button>
+                    <button id="nextBtn">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const sliderWrapper = document.getElementById('sliderWrapper');
+        let cards = Array.from(sliderWrapper.children);
+
+        // Clone cards to make infinite loop effect
+        cards.forEach(card => {
+            const clone = card.cloneNode(true);
+            sliderWrapper.appendChild(clone);
+        });
+
+        let index = 0;
+        let cardWidth = cards[0].offsetWidth + 15;
+
+        // Update card width on resize
+        window.addEventListener('resize', () => {
+            cardWidth = cards[0].offsetWidth + 15;
+        });
+
+        // Slide function
+        function slide() {
+            sliderWrapper.style.transition = 'transform 0.5s linear';
+            sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
+        }
+
+        // Infinite auto scroll
+        let autoScroll = setInterval(() => {
+            index++;
+            slide();
+            if (index >= cards.length) {
+                setTimeout(() => {
+                    sliderWrapper.style.transition = 'none';
+                    index = 0;
+                    sliderWrapper.style.transform = `translateX(0px)`;
+                }, 500);
+            }
+        }, 3000); // slides every 3 seconds
+
+        // Button controls
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            clearInterval(autoScroll);
+            index++;
+            slide();
+            if (index >= cards.length) {
+                setTimeout(() => {
+                    sliderWrapper.style.transition = 'none';
+                    index = 0;
+                    sliderWrapper.style.transform = `translateX(0px)`;
+                }, 500);
+            }
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            clearInterval(autoScroll);
+            if (index === 0) {
+                sliderWrapper.style.transition = 'none';
+                index = cards.length - 1;
+                sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
+                setTimeout(() => {
+                    sliderWrapper.style.transition = 'transform 1.3s linear';
+                    index--;
+                    slide();
+                }, 20);
+            } else {
+                index--;
+                slide();
+            }
+        });
+    </script>
+
+
 
     <script src="./SCRIPT/header.js"></script>
     <script src="./SCRIPT/include.js"></script>

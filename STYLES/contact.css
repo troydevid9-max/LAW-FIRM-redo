@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Areas Slider</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+
+  .practice-section {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  /* Left Text Column */
+  .practice-header {
+    flex: 1 1 350px;
+    max-width: 400px;
+  }
+
+  .practice-header p:first-child {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+  }
+
+  .practice-header h2 {
+    font-size: 28px;
+    margin: 5px 0 15px;
+  }
+
+  .practice-header p:last-child {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .detailed-practice-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d9b887;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  /* Slider Column */
+  .slider-container {
+    flex: 2 1 600px;
+    position: relative;
+    overflow: hidden;
+    background-color: #d9b887;
+    border-radius: 8px;
+    padding: 20px 0;
+  }
+
+  .slider-wrapper {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px 20px;
+    margin-right: 15px;
+    width: 220px; /* perfect width */
+    height: 270px; /* perfect height */
+    flex-shrink: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .card-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    display: inline-block;
+    background-color: #555;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 24px;
+    line-height: 50px;
+  }
+
+  .card h3 {
+    margin: 5px 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .card p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  .slider-buttons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+
+  .slider-buttons button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  @media (max-width: 900px) {
+    .practice-section {
+      flex-direction: column;
+      align-items: center;
+    }
+    .slider-container {
+      width: 100%;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="practice-section">
+  <!-- Left Column -->
+  <div class="practice-header">
+    <p>OUR PRACTICE</p>
+    <h2>Our Practice Areas</h2>
+    <p>Diverse Legal Expertise to Meet Your Needs. Our commitment to excellence in legal service became evident as we handled a diverse range of cases, from corporate law to family disputes. We steadily gained the trust of our clients, earning a reputation for professionalism and integrity.</p>
+    <button class="detailed-practice-btn">Detailed Practice</button>
+  </div>
+
+  <!-- Right Column Slider -->
+  <div class="slider-container">
+    <div class="slider-wrapper" id="sliderWrapper">
+      <div class="card">
+        <div class="card-icon">🏛️</div>
+        <h3>Corporate Law</h3>
+        <p>Navigating the complexities of corporate governance, mergers, acquisitions, and compliance with precision and strategic insight.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">👨‍👩‍👧‍👦</div>
+        <h3>Family Law</h3>
+        <p>Compassionate advocacy for matters of family, including divorce, child custody, spousal support, and property division.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">💰</div>
+        <h3>Banking & Finance</h3>
+        <p>Assisting financial institutions, businesses, and individuals with banking and finance matters.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚖️</div>
+        <h3>Criminal Law</h3>
+        <p>Defending clients with integrity, handling criminal cases with strategic insight and dedication.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📜</div>
+        <h3>Real Estate Law</h3>
+        <p>Advising on property transactions, leases, disputes, and regulatory compliance in real estate.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏢</div>
+        <h3>Intellectual Property</h3>
+        <p>Protecting intellectual property rights through registration, enforcement, and licensing solutions.</p>
+      </div>
+    </div>
+
+    <!-- Slider Buttons -->
+    <div class="slider-buttons">
+      <button id="prevBtn">‹</button>
+      <button id="nextBtn">›</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const sliderWrapper = document.getElementById('sliderWrapper');
+  const cards = Array.from(sliderWrapper.children);
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  // Clone cards for infinite scroll
+  cards.forEach(card => {
+    const clone = card.cloneNode(true);
+    sliderWrapper.appendChild(clone);
+  });
+
+  let index = 0;
+  let cardWidth = cards[0].offsetWidth + 15;
+
+  function updateWidth() {
+    cardWidth = cards[0].offsetWidth + 15;
+  }
+
+  window.addEventListener('resize', updateWidth);
+
+  function slide() {
+    sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
+    sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index++;
+    slide();
+    // reset for infinite effect
+    if(index >= cards.length){
+      setTimeout(() => {
+        sliderWrapper.style.transition = 'none';
+        index = 0;
+        sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
+      }, 500);
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if(index === 0){
+      sliderWrapper.style.transition = 'none';
+      index = cards.length;
+      sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
+      setTimeout(() => {
+        sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
+        index--;
+        slide();
+      }, 20);
+    } else {
+      index--;
+      slide();
+    }
+  });
+</script>
+
+</body>
+</html>
