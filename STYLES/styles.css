@@ -6,6 +6,8 @@
 
 body {
     font-family: "Poppins", sans-serif;
+    
+    
 }
 
 .hero {
@@ -101,7 +103,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
+    background-color: whitesmoke;
 }
 
 /* Flexbox layout */
@@ -227,4 +229,111 @@ body {
 
 
 
+#appointment {
+  position: relative;
+  padding: 80px 20px;
+  color: #fff;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  overflow: hidden; 
+}
 
+
+#appointment::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../IMAGES/images\ \(34\).jpeg') no-repeat center center / cover;
+  filter: blur(7px);
+  z-index: 0;
+  pointer-events: none; 
+}
+
+
+.appointment-container {
+  position: relative;
+  z-index: 1;
+}
+
+#appointment h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: white;
+}
+
+#appointment p {
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 40px;
+  color: whitesmoke;
+}
+
+/* Flex container for text + form */
+.appointment-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.appointment-text {
+  flex: 1 1 350px;
+  min-width: 280px;
+}
+
+.appointment-form {
+  flex: 1 1 350px;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+/* Form fields */
+.appointment-form input,
+.appointment-form textarea {
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Button */
+.appointment-form button {
+  padding: 16px;
+  font-size: 18px;
+  background-color: #c7a36a;
+  color: #212529;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.appointment-form button:hover {
+  background-color: #b89257;
+}
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+  .appointment-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .appointment-text, .appointment-form {
+    text-align: center;
+  }
+  .appointment-form {
+    text-align: left;
+  }
+}

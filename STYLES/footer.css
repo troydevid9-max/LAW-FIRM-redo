@@ -161,7 +161,7 @@
   cursor:pointer;
 }
 
-/* Mobile polish */
+/* Mobile RESPONSIVENESS*/
 @media(max-width:600px){
   .footer-bottom{
     flex-direction:column;

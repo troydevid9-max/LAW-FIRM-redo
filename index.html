@@ -70,6 +70,7 @@
             margin-top: 30px;
             padding: 0;
             height: 100vh;
+            background-color: whitesmoke;
         }
 
         /* Practice Section Flex Layout */
@@ -108,8 +109,8 @@
 
         .detailed-practice-btn {
             margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #d9b887;
+            padding: 14px 20px;
+            background-color: #d7b178;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -145,7 +146,7 @@
             justify-content: flex-start;
         }
         .card:hover{
-            background-color: #fffafad2;
+            background-color: whitesmoke;
         }
 
 
@@ -369,6 +370,33 @@
         <script src="./SCRIPT/header.js"></script>
         <script src="./SCRIPT/include.js"></script>
     </body>
+
+    <section id="appointment">
+    <div class="appointment-container">
+      <div class="appointment-text">
+        <h2>Get an Appointment</h2>
+        <p>Schedule a consultation with our experienced attorneys today.</p>
+      </div>
+
+      <form id="appointmentForm" class="appointment-form">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="date" name="date" required>
+        <textarea name="message" placeholder="Your Message" rows="4"></textarea>
+        <button type="submit">Book Appointment</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById('appointmentForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert('Thank you! Your appointment request has been submitted.');
+      this.reset();
+    });
+  </script>
+  
 
     <div id="footer"></div>
 </body>
