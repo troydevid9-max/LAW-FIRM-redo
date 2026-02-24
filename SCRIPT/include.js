@@ -2,11 +2,6 @@ const pageType = document.body.dataset.layout
 const pageLocation = window.location.pathname
 
 
-
-console.log(pageLocation)
-
-console.log(pageType)
-
 const load = async (id, file) => {
 
     //FETCH THE FILE 
@@ -31,16 +26,16 @@ const load = async (id, file) => {
 async function head() {
 
     if (pageType === "public") {
-        if (pageLocation === "/FRONTEND/index.html" || pageLocation === "/" || pageLocation === "/index.html") {
+        if (pageLocation === "/FRONTEND/index.html" ||   pageLocation === "/" || pageLocation === "/index.html") {
             await load("header", "./COMPONENTS/header.html")
-
-            headerAll()
             await load("footer", "./COMPONENTS/footer.html")
+            headerAll()
         }
 
         else {
             await load("header", "../COMPONENTS/header.html")
             await load("footer", "../COMPONENTS/footer.html")
+            headerAll()
         }
 
     }

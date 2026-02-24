@@ -159,6 +159,11 @@
   width:45px;
   height:45px;
   cursor:pointer;
+  border-radius: 5px;
+}
+
+.scroll-top:hover{
+  color: whitesmoke;
 }
 
 /* Mobile RESPONSIVENESS*/

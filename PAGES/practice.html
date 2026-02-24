@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Practice Areas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../STYLES/practice.css">
+    <link rel="stylesheet" href="../STYLES/header.css">
+    <link rel="stylesheet" href="../STYLES/footer.css">
+    <link rel="stylesheet" href="../STYLES/styles.css">
+
+</head>
+
+
+
+<body data-layout="public">
+    <div id="header"></div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <p class="breadcrumb">HOME / PRACTICE AREAS</p>
+            <h1>PRACTICE AREAS</h1>
+        </div>
+    </section>
+
+
+    <section class="intro">
+        <div class="container">
+            <p class="small-heading">What We Do</p>
+            <h2>Comprehensive Legal Expertise</h2>
+            <p class="intro-text">
+                Hardy Buchanan & Rooney LLP provides strategic, results-driven legal services
+                across a broad spectrum of practice areas. Our team combines experience,
+                dedication, and precision to protect and advance our clients’ interests.
+            </p>
+        </div>
+    </section>
+
+
+
+
+    <style>
+        #bd {
+            font-family: Arial, sans-serif;
+            margin-top: 30px;
+            margin-bottom: 0;
+            padding: 0;
+            height: 90vh;
+            background-color: white;
+        }
+
+        /* Practice Section Flex Layout */
+        .practice-section {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 50px auto;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        /* Left Text Column */
+        .practice-header {
+            flex: 1 1 350px;
+            max-width: 400px;
+        }
+
+        .practice-header p:first-child {
+            font-size: 46px;
+            font-weight: 600;
+            color: #888;
+            margin: 0;
+        }
+
+        .practice-header h2 {
+            font-size: 28px;
+            margin: 5px 0 15px;
+        }
+
+        .practice-header p:last-child {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .detailed-practice-btn {
+            margin-top: 20px;
+            padding: 12px 30px;
+            background-color: #B49C73;
+            border: none;
+            border-radius: 5px;
+            color: #212529;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* Right Slider Column */
+        .slider-container {
+            flex: 2 1 600px;
+            position: relative;
+            overflow: hidden;
+            background-color: #d9b887;
+            border-radius: 8px;
+            padding: 20px 0;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 30px 20px;
+            margin-right: 15px;
+            width: 220px;
+            height: 270px;
+            flex-shrink: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .card:hover {
+            background-color: whitesmoke;
+        }
+
+
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+            display: inline-block;
+            background-color: #555;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 24px;
+            line-height: 50px;
+        }
+
+        .card h3 {
+            margin: 5px 0 10px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Slider Buttons */
+        .slider-buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+            pointer-events: none;
+        }
+
+        .slider-buttons button {
+            background-color: #555;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            pointer-events: all;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 900px) {
+            .practice-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .slider-container {
+                width: 100%;
+                flex: 0;
+            }
+        }
+
+        /* Mobile: show only 1 card at a time */
+        @media (max-width: 600px) {
+            .slider-wrapper {
+                flex-direction: row;
+                /* still flex so slide works */
+            }
+
+            .card {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    </style>
+
+    <section id="bd">
+
+        <div class="practice-section">
+            <!-- Left Column -->
+            <div class="practice-header">
+                <p>OUR PRACTICE</p>
+                <h2>Our Practice Areas</h2>
+                <p>Diverse Legal Expertise to Meet Your Needs. Our commitment to excellence in legal service became
+                    evident as we handled a diverse range of cases, from corporate law to family disputes. We steadily
+                    gained the trust of our clients, earning a reputation for professionalism and integrity.</p>
+                <button class="detailed-practice-btn">Detailed Practice</button>
+            </div>
+
+            <!-- Right Column Slider -->
+            <div class="slider-container">
+                <div class="slider-wrapper" id="sliderWrapper">
+                    <div class="card">
+                        <div class="card-icon">🏛️</div>
+                        <h3>Corporate Law</h3>
+                        <p>Navigating the complexities of corporate governance, mergers, acquisitions, and compliance
+                            with precision and strategic insight.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">👨‍👩‍👧‍👦</div>
+                        <h3>Family Law</h3>
+                        <p>Compassionate advocacy for matters of family, including divorce, child custody, spousal
+                            support, and property division.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">💰</div>
+                        <h3>Banking & Finance</h3>
+                        <p>Assisting financial institutions, businesses, and individuals with banking and finance
+                            matters.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">⚖️</div>
+                        <h3>Criminal Law</h3>
+                        <p>Defending clients with integrity, handling criminal cases with strategic insight and
+                            dedication.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">📜</div>
+                        <h3>Real Estate Law</h3>
+                        <p>Advising on property transactions, leases, disputes, and regulatory compliance in real
+                            estate.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🏢</div>
+                        <h3>Intellectual Property</h3>
+                        <p>Protecting intellectual property rights through registration, enforcement, and licensing
+                            solutions.</p>
+                    </div>
+                </div>
+
+                <!-- Slider Buttons -->
+                <div class="slider-buttons">
+                    <button id="prevBtn">‹</button>
+                    <button id="nextBtn">›</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const sliderWrapper = document.getElementById('sliderWrapper');
+            let cards = Array.from(sliderWrapper.children);
+
+            // Clone cards for infinite scroll
+            cards.forEach(card => sliderWrapper.appendChild(card.cloneNode(true)));
+
+            let index = 0;
+            let cardWidth = cards[0].offsetWidth;
+            let autoScroll;
+
+            // Detect if mobile
+            function isMobile() {
+                return window.innerWidth <= 600;
+            }
+
+            // Update cardWidth on resize
+            window.addEventListener('resize', () => {
+                cardWidth = cards[0].offsetWidth;
+            });
+
+            // Slide function
+            function slide() {
+                sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
+                sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
+            }
+
+            // Manual button controls
+            document.getElementById('nextBtn').addEventListener('click', () => {
+                clearInterval(autoScroll);
+                index++;
+                slide();
+                if (index >= cards.length) {
+                    setTimeout(() => {
+                        sliderWrapper.style.transition = 'none';
+                        index = 0;
+                        sliderWrapper.style.transform = `translateX(0px)`;
+                    }, 500);
+                }
+            });
+
+            document.getElementById('prevBtn').addEventListener('click', () => {
+                clearInterval(autoScroll);
+                if (index === 0) {
+                    sliderWrapper.style.transition = 'none';
+                    index = cards.length - 1;
+                    sliderWrapper.style.transform = `translateX(-${index * cardWidth}px)`;
+                    setTimeout(() => {
+                        sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
+                        index--;
+                        slide();
+                    }, 20);
+                } else {
+                    index--;
+                    slide();
+                }
+            });
+
+            // Auto-scroll on mobile after 1.2 seconds
+            setTimeout(() => {
+                if (isMobile()) {
+                    autoScroll = setInterval(() => {
+                        index++;
+                        slide();
+                        if (index >= cards.length) {
+                            setTimeout(() => {
+                                sliderWrapper.style.transition = 'none';
+                                index = 0;
+                                sliderWrapper.style.transform = `translateX(0px)`;
+                            }, 500);
+                        }
+                    }, 3000); // slide every 3 seconds
+                }
+            }, 1200);
+
+        </script>
+
+
+
+        <script src="./SCRIPT/header.js"></script>
+        <script src="./SCRIPT/include.js"></script>
+    </section>
+
+
+
+    <div id="appointment">
+        <div class="appointment-container">
+            <div class="appointment-text">
+                <h2>Get an Appointment</h2>
+                <p>Schedule a consultation with our experienced attorneys today.</p>
+            </div>
+
+            <form id="appointmentForm" class="appointment-form">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="date" name="date" required>
+                <textarea name="message" placeholder="Your Message" rows="4"></textarea>
+                <button type="submit">Book Appointment</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <style>
+        .banner {
+            font-family: Arial, sans-serif;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            background: url('../IMAGES/images\ \(33\).jpeg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 13px;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* overlay for readability */
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            animation: fadeSlideUp 1.2s ease-out forwards;
+        }
+
+        .banner h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .banner button {
+            background-color: #b8860b;
+            /* golden accent */
+            color: #222;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .banner button:hover {
+            background-color: #a0740a;
+            color: #fff;
+        }
+
+        /* Animation */
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Tablet adjustments */
+        @media (max-width: 992px) {
+            .banner {
+                height: 70vh;
+                padding: 30px;
+            }
+
+            .banner h1 {
+                font-size: 2.5rem;
+            }
+
+            .banner p {
+                font-size: 1rem;
+            }
+
+            .banner button {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            .banner {
+                height: 60vh;
+                padding: 20px;
+            }
+
+            .banner h1 {
+                font-size: 1.8rem;
+            }
+
+            .banner p {
+                font-size: 0.9rem;
+            }
+
+            .banner button {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+
+    <section class="banner">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h1>Let's get started.</h1>
+            <p>Call us now for a Free Legal Consultation</p>
+            <button>Call Us Now</button>
+        </div>
+    </section>
+
+
+
+
+  
+
+    <div id="footer"></div>
+    <script src="../SCRIPT/practice.js"></script>
+    <script src="../SCRIPT/header.js"></script>
+    <script src="../SCRIPT/include.js"></script>
+</body>
+
+</html>

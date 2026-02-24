@@ -6,7 +6,7 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background-color: whitesmoke;
+    background-color: white;
     
     
 }
@@ -226,7 +226,9 @@ body {
 }
 
 
-
+/* =========================
+   APPOINTMENT SECTION
+========================= */
 
 
 
@@ -234,47 +236,39 @@ body {
   position: relative;
   padding: 80px 20px;
   color: #fff;
+  margin-top: 0;
   text-align: center;
   font-family: 'Georgia', serif;
-  overflow: hidden; 
+  overflow: hidden;
+  margin-bottom: 170px;
 }
 
-
+/* Blurred Background Image */
 #appointment::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('../IMAGES/images\ \(34\).jpeg') no-repeat center center / cover;
-  filter: blur(7px);
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f')
+              no-repeat center center / cover;
+  filter: blur(6px);
+  transform: scale(1.1); /* prevents blur edge cut */
   z-index: 0;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 
-.appointment-container {
-  position: relative;
+#appointment::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
   z-index: 1;
 }
 
-#appointment h2 {
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 15px;
-  color: white;
-}
-
-#appointment p {
-  font-size: 18px;
-  font-family: Arial, sans-serif;
-  margin-bottom: 40px;
-  color: whitesmoke;
-}
-
-/* Flex container for text + form */
+/* Container */
 .appointment-container {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -284,11 +278,28 @@ body {
   align-items: flex-start;
 }
 
+/* Text Section */
 .appointment-text {
+    margin-top: 60px;
   flex: 1 1 350px;
   min-width: 280px;
 }
 
+#appointment h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+#appointment p {
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  margin-bottom: 40px;
+  color: #f1f1f1;
+}
+
+/* Form Section */
 .appointment-form {
   flex: 1 1 350px;
   min-width: 280px;
@@ -298,13 +309,21 @@ body {
   text-align: left;
 }
 
-/* Form fields */
+/* Form Fields */
 .appointment-form input,
 .appointment-form textarea {
   padding: 14px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 6px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.appointment-form input:focus,
+.appointment-form textarea:focus {
+  border-color: #c7a36a;
+  box-shadow: 0 0 8px rgba(199, 163, 106, 0.4);
 }
 
 /* Button */
@@ -317,24 +336,49 @@ body {
   border-radius: 6px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .appointment-form button:hover {
   background-color: #b89257;
+  transform: translateY(-2px);
 }
 
-/* Responsive for mobile */
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 768px) {
+
+  #appointment {
+    padding: 60px 20px;
+  }
+
   .appointment-container {
     flex-direction: column;
     align-items: center;
     gap: 30px;
   }
-  .appointment-text, .appointment-form {
-    text-align: center;
+
+  .appointment-text,
+  .appointment-form {
+    width: 100%;
   }
+
+  #appointment h2 {
+    font-size: 28px;
+  }
+
+  #appointment p {
+    font-size: 16px;
+  }
+
   .appointment-form {
     text-align: left;
   }
 }
+
+
+
+
+
