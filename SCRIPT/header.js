@@ -31,11 +31,11 @@ function headerAll() {
     // console.log(pageType)
 
     if (pageLocation.includes("PAGES")) {
-        alert("Inside pages folder")
+        console.log("Inside pages folder")
         navLinks.innerHTML = navInside
     }
-    else {
-        alert("In index page")
+    else if (!pageLocation.includes("PAGES")) {
+        console.log("In index page")
         navLinks.innerHTML = navOutside
     }
 
