@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Legal Cases</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../STYLES/header.css">
+    <link rel="stylesheet" href="../STYLES/footer.css">
+    <link rel="stylesheet" href="../STYLES/styles.css">
+
+</head>
+
+
+
+<body data-layout="public">
+    <div id="header"></div>
+
+
+
+    <!-- HERO SECTION -->
+    <section style="
+        position: relative;
+        height: 450px;
+        background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f') center/cover no-repeat;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;">
+
+        <!-- Dark Overlay -->
+        <div style="
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.6);">
+        </div>
+
+        <!-- Hero Content -->
+        <div style="position:relative; z-index:2;">
+            <p style="letter-spacing:2px; font-size:14px; margin-bottom:15px;">
+                HOME / LEGAL CASES
+            </p>
+            <h1 style="
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size:64px;
+                margin:0;
+                letter-spacing:2px;">
+                LEGAL CASES
+            </h1>
+        </div>
+    </section>
+
+
+
+    
+    <section class="experience-section">
+        <div class="section-content">
+
+            <!-- Image with badge -->
+            <div class="image-content">
+                <img src="../IMAGES/img1.png" alt="Law Firm">
+                <div class="experience-badge">22 Years Experience</div>
+            </div>
+
+            <!-- Text content -->
+            <div class="text-content">
+                <h4 class="subheader">Learn About Us</h4>
+                <h2>Trusted Legal Expertise</h2>
+                <p>
+                    Over the course of 22 years, Hardy Buchanan & Rooney LLP has evolved, adapted, and grown,
+                    but our core values of integrity, excellence, and commitment to justice remain unwavering.
+                    We are proud of our contributions to the Canadian legal landscape, and we look forward to
+                    the future with the same dedication and enthusiasm that have defined our journey thus far.
+                    As we continue to serve our clients and the community, we remain committed to upholding the
+                    highest standards of legal practice and making a positive impact on the lives of those we serve.
+                </p>
+                <button class="section-btn">Get A Quote</button>
+            </div>
+
+        </div>
+    </section>
+
+
+
+  <style>
+        .features-section {
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            background-color: whitesmoke;
+            flex-wrap: wrap;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeSlideUp 1.2s ease-out forwards;
+
+        }
+
+        .features-image {
+            flex: 1;
+            text-align: center;
+            min-width: 280px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeSlideUp 1.2s ease-out forwards;
+            animation-delay: 0.3s;
+
+        }
+
+        .features-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .features-content {
+            flex: 1;
+            padding: 20px;
+            min-width: 280px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeSlideUp 1.2s ease-out forwards;
+            animation-delay: 0.6s;
+        }
+
+        .features-content h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .features-content h3 {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .feature-item {
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlideUp 1s ease-out forwards;
+        }
+
+        .feature-item:nth-child(1) {
+            animation-delay: 0.8s;
+        }
+
+        .feature-item:nth-child(2) {
+            animation-delay: 1.0s;
+        }
+
+        .feature-item:nth-child(3) {
+            animation-delay: 1.2s;
+        }
+
+        .feature-item span {
+            font-size: 22px;
+            font-weight: bold;
+            color: #b8860b;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .feature-item h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #222;
+        }
+
+        .feature-item p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .features-section {
+                padding: 30px;
+            }
+
+            .features-content h2 {
+                font-size: 24px;
+            }
+
+            .features-content h3 {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .features-content {
+                padding: 10px;
+            }
+
+            .feature-item span {
+                font-size: 20px;
+            }
+
+            .feature-item h4 {
+                font-size: 16px;
+            }
+
+            .feature-item p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .features-section {
+                padding: 20px;
+            }
+
+            .features-content h2 {
+                font-size: 20px;
+            }
+
+            .features-content h3 {
+                font-size: 16px;
+            }
+
+            .feature-item span {
+                font-size: 18px;
+            }
+
+            .feature-item h4 {
+                font-size: 15px;
+            }
+
+            .feature-item p {
+                font-size: 13px;
+            }
+        }
+    </style>
+
+    <section class="features-section">
+        <div class="features-image">
+            <img src="../IMAGES/ChatGPT Image Feb 23, 2026, 02_32_16 PM.png" alt="Golden balance scale">
+        </div>
+        <div class="features-content">
+            <h2>OUR FEATURES</h2>
+            <h3>Why Choose Us</h3>
+
+            <div class="feature-item">
+                <span>01</span>
+                <h4>Expertise You Can Trust</h4>
+                <p>Our team of seasoned legal professionals brings years of experience and a deep understanding of the
+                    law to every case. We have a proven track record of achieving favorable outcomes for our clients
+                    across a wide range of practice areas.</p>
+            </div>
+
+            <div class="feature-item">
+                <span>02</span>
+                <h4>Client-Centered Approach</h4>
+                <p>At HARDY BUCHANAN & ROONEY LLP, your needs are our top priority. We take the time to listen to your
+                    concerns, explain your options clearly, and work collaboratively with you to develop personalized
+                    legal strategies. Your peace of mind and satisfaction are our ultimate goals.</p>
+            </div>
+
+            <div class="feature-item">
+                <span>03</span>
+                <h4>Results-Driven Representation</h4>
+                <p>We are committed to delivering results. Whether it's securing a successful settlement, winning a
+                    courtroom battle, or providing proactive legal advice, our relentless pursuit of your best interests
+                    sets us apart. Your success is our success, and we fight vigorously to protect your rights and
+                    achieve your objectives.</p>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <style>
+        .banner {
+            font-family: Arial, sans-serif;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80vh;
+            background: url('../IMAGES/images\ \(33\).jpeg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 63px;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* overlay for readability */
+        }
+
+        .banner-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            animation: fadeSlideUp 1.2s ease-out forwards;
+        }
+
+        .banner h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .banner button {
+            background-color: #b8860b;
+            /* golden accent */
+            color: #222;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .banner button:hover {
+            background-color: #a0740a;
+            color: #fff;
+        }
+
+        /* Animation */
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Tablet adjustments */
+        @media (max-width: 992px) {
+            .banner {
+                height: 70vh;
+                padding: 30px;
+            }
+
+            .banner h1 {
+                font-size: 2.5rem;
+            }
+
+            .banner p {
+                font-size: 1rem;
+            }
+
+            .banner button {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 600px) {
+            .banner {
+                height: 60vh;
+                padding: 20px;
+            }
+
+            .banner h1 {
+                font-size: 1.8rem;
+            }
+
+            .banner p {
+                font-size: 0.9rem;
+            }
+
+            .banner button {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+
+    <section class="banner">
+        <div class="banner-overlay"></div>
+        <div class="banner-content">
+            <h1>Let's get started.</h1>
+            <p>Call us now for a Free Legal Consultation</p>
+            <button>Call Us Now</button>
+        </div>
+    </section>
+
+
+    <div id="footer"></div>
+
+    <script src="../SCRIPT/include.js"></script>
+    <script src="../SCRIPT/header.js"></script>
+    
+</body>
